@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RxjsComponent } from 'src/app/rxjs/rxjs.component';
+import { NotFoundComponent } from 'src/app/not-found/not-found.component';
+import { HomeComponent } from 'src/app/home/home.component';
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'rxjs', component: RxjsComponent },
+  { path: '**', component: NotFoundComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
