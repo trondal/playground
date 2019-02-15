@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { GitSearch } from './git-search';
 import { HttpClient } from '@angular/common/http';
-import { GitUsers } from 'src/app/git-users';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { GitUsers } from 'src/app/services/git-users';
+
+import { GitSearch } from './git-search';
 
 @Injectable({
   providedIn: 'root'

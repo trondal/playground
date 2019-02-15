@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GitSearchService } from 'src/app/git-search.service';
-import { GitSearch } from 'src/app/git-search';
-import { GitUsers } from 'src/app/git-users';
-import { Event } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { GitSearch } from 'src/app/services/git-search';
+import { GitSearchService } from 'src/app/services/git-search.service';
+import { GitUsers } from 'src/app/services/git-users';
 
 @Component({
   selector: 'app-github',
@@ -12,18 +11,23 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class GithubComponent implements OnInit {
 
-  searchForm: FormGroup;
+  searchForm: FormGroup = new FormGroup({
+    usersQuery: new FormControl(''),
+    repositoriesQuery: new FormControl(''),
+  });
 
   searchUsersResult: GitUsers;
   searchRepositoriesResult: GitSearch;
 
-  constructor(private gitSearchService: GitSearchService) {}
-
-  ngOnInit() {
-    this.searchForm = new FormGroup({
+  constructor(private gitSearchService: GitSearchService) {
+    /* this.searchForm = new FormGroup({
       usersQuery: new FormControl(''),
       repositoriesQuery: new FormControl(''),
-    });
+    }); */
+  }
+
+  ngOnInit() {
+
   }
 
   searchUsers() {

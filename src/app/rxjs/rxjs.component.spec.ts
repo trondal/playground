@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RxjsComponent } from './rxjs.component';
+import { MatCardModule } from '@angular/material/card';
 
 describe('RxjsComponent', () => {
   let component: RxjsComponent;
@@ -8,7 +9,10 @@ describe('RxjsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RxjsComponent ]
+      declarations: [ RxjsComponent ],
+      imports: [
+        MatCardModule
+      ]
     })
     .compileComponents();
   }));
