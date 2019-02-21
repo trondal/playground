@@ -7,10 +7,9 @@ import { GitUsers } from 'src/app/services/git-users';
 @Component({
   selector: 'app-github',
   templateUrl: './github.component.html',
-  styleUrls: ['./github.component.scss']
+  styleUrls: ['./github.component.scss'],
 })
 export class GithubComponent implements OnInit {
-
   searchForm: FormGroup = new FormGroup({
     usersQuery: new FormControl(''),
     repositoriesQuery: new FormControl(''),
@@ -26,16 +25,14 @@ export class GithubComponent implements OnInit {
     }); */
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   searchUsers() {
     const query = this.searchForm.get('usersQuery').value;
     if (!query || query.length < 2) {
       return;
     }
-    this.gitSearchService.searchUsers(query).subscribe( response => {
+    this.gitSearchService.searchUsers(query).subscribe(response => {
       this.searchUsersResult = response;
     });
   }
@@ -45,9 +42,8 @@ export class GithubComponent implements OnInit {
     if (!query || query.length < 2) {
       return;
     }
-    this.gitSearchService.searchRepositories(query).subscribe( response => {
+    this.gitSearchService.searchRepositories(query).subscribe(response => {
       this.searchRepositoriesResult = response;
     });
   }
-
 }

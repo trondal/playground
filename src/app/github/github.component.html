@@ -1,7 +1,7 @@
 <form [formGroup]="searchForm" class="container">
   <mat-card>
     <mat-form-field>
-      <input matInput formControlName="usersQuery" (change)="searchUsers()" placeholder="Search users in github">
+      <input matInput formControlName="usersQuery" (change)="searchUsers()" placeholder="Search users in github" />
     </mat-form-field>
     <mat-list *ngIf="searchUsersResult">
       <mat-list-item *ngFor="let r of searchUsersResult.items">{{ r.login }}</mat-list-item>
@@ -9,8 +9,12 @@
   </mat-card>
   <mat-card>
     <mat-form-field>
-      <input matInput formControlName="repositoriesQuery" (change)="searchRepositories()"
-        placeholder="Search repositories in github" />
+      <input
+        matInput
+        formControlName="repositoriesQuery"
+        (change)="searchRepositories()"
+        placeholder="Search repositories in github"
+      />
     </mat-form-field>
     <mat-list *ngIf="searchRepositoriesResult">
       <mat-list-item *ngFor="let r of searchRepositoriesResult.items">{{ r.name }}</mat-list-item>

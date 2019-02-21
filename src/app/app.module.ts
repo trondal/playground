@@ -17,13 +17,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RxjsComponent,
-    HomeComponent,
-    NotFoundComponent,
-    GithubComponent
-  ],
+  declarations: [AppComponent, RxjsComponent, HomeComponent, NotFoundComponent, GithubComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -34,10 +28,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     MatToolbarModule,
     MatCardModule,
     MatInputModule,
-    MatListModule
-
+    MatListModule,
   ],
   providers: [GitSearchService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

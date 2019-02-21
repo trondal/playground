@@ -16,7 +16,7 @@ describe('GithubComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GithubComponent ],
+      declarations: [GithubComponent],
       imports: [
         MatCardModule,
         ReactiveFormsModule,
@@ -24,13 +24,10 @@ describe('GithubComponent', () => {
         MatListModule,
 
         MatInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
       ],
-      providers: [
-        { provide: GitSearchService, useClass: GitSearchServiceMock },
-      ]
-    })
-    .compileComponents();
+      providers: [{ provide: GitSearchService, useClass: GitSearchServiceMock }],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
