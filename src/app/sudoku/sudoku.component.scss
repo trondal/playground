@@ -1,0 +1,74 @@
+.container {
+  width: 270px;
+  height: 270px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.cell {
+  border: 1px solid red;
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+}
+
+.number {
+  transform: translate(33%, 33%);
+}
+
+.left0 {
+  margin-left: 0px;
+}
+.left1 {
+  margin-left: 30px;
+}
+.left2 {
+  margin-left: 60px;
+}
+.left3 {
+  margin-left: 90px;
+}
+.left4 {
+  margin-left: 120px;
+}
+.left5 {
+  margin-left: 150px;
+}
+.left6 {
+  margin-left: 180px;
+}
+.left7 {
+  margin-left: 210px;
+}
+.left8 {
+  margin-left: 240px;
+}
+
+.top0 {
+  margin-top: 0px;
+}
+.top1 {
+  margin-top: 30px;
+}
+.top2 {
+  margin-top: 60px;
+}
+.top3 {
+  margin-top: 90px;
+}
+.top4 {
+  margin-top: 120px;
+}
+.top5 {
+  margin-top: 150px;
+}
+.top6 {
+  margin-top: 180px;
+}
+.top7 {
+  margin-top: 210px;
+}
+.top8 {
+  margin-top: 240px;
+}

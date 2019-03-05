@@ -4,7 +4,6 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "2.0.0",
   "configurations": [
-
     /* {
       "type": "chrome",
       "request": "launch",
@@ -26,7 +25,7 @@
       "request": "launch",
       "url": "http://localhost:9876/debug.html",
       "webRoot": "${workspaceFolder}",
-      "sourceMaps": true,
+      "sourceMaps": true
       /* "sourceMapPathOverrides": {
         "/./*": "${webRoot}/*",
         "/src/*": "${webRoot}/*",
@@ -34,5 +33,13 @@
         "/./~/*": "${webRoot}/node_modules/*"
       } */
     },
+    {
+      "name": "ng test suduko",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:9876/sudoku",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true
+    }
   ]
 }

@@ -1,0 +1,9 @@
+<div class="container">
+  <div *ngFor="let cell of cells; index as i" class="cell {{ cell.getClassX() }} {{ cell.getClassY() }}">
+    <div class="number">
+      <span *ngIf="cell.getNumber() !== 0">
+        {{ cell.getNumber() }}
+      </span>
+    </div>
+  </div>
+</div>
