@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
@@ -15,14 +15,16 @@ import { GithubComponent } from './github/github.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { SudokuComponent } from './sudoku/sudoku.component';
 
 @NgModule({
-  declarations: [AppComponent, RxjsComponent, HomeComponent, NotFoundComponent, GithubComponent],
+  declarations: [AppComponent, RxjsComponent, HomeComponent, NotFoundComponent, GithubComponent, SudokuComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
 
     MatToolbarModule,
