@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GitSearch } from 'src/app/services/git-search';
 import { GitSearchService } from 'src/app/services/git-search.service';
 import { GitUsers } from 'src/app/services/git-users';
@@ -12,11 +12,6 @@ import { AdvancedSearchModel } from '../advanced-search-model';
   styleUrls: ['./git-search.component.scss'],
 })
 export class GitSearchComponent implements OnInit {
-  searchForm: FormGroup = new FormGroup({
-    usersQuery: new FormControl(''),
-    repositoriesQuery: new FormControl(''),
-  });
-
   searchUsersResult: GitUsers;
   searchRepositoriesResult: GitSearch;
   searchResults: GitSearch;
@@ -24,15 +19,37 @@ export class GitSearchComponent implements OnInit {
   displayQuery: string;
   title: string;
 
+  form: FormGroup;
+  formControls = {};
+
   constructor(private gitSearchService: GitSearchService, private route: ActivatedRoute, private router: Router) {
-    this.searchForm = new FormGroup({
-      usersQuery: new FormControl(''),
-      repositoriesQuery: new FormControl(''),
+    this.modelKeys.forEach(key => {
+      const validators = [];
+      if (key === 'q') {
+        validators.push(Validators.required);
+      }
+      if (key === 'stars') {
+        validators.push(Validators.maxLength(4));
+      }
+      validators.push(this.noSpecialChars);
+      this.formControls[key] = new FormControl(this.model[key], validators);
     });
+    this.form = new FormGroup(this.formControls);
   }
 
   model = new AdvancedSearchModel('', '', '', null, null, '');
   modelKeys = Object.keys(this.model);
+  noSpecialChars(c: FormControl) {
+    const REGEXP = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
+
+    return REGEXP.test(c.value)
+      ? {
+          validateEmail: {
+            valid: false,
+          },
+        }
+      : null;
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -53,7 +70,27 @@ export class GitSearchComponent implements OnInit {
     );
   }
 
-  sendQuery = () => {
+  sendQueryReactive = () => {
+    this.searchResults = null;
+    const search: string = this.form.value['q'];
+    let params = '';
+    this.modelKeys.forEach(elem => {
+      if (elem === 'q') {
+        return false;
+      }
+      if (this.form.value[elem]) {
+        params += '+' + elem + ':' + this.form.value[elem];
+      }
+    });
+    this.searchQuery = search;
+    if (params !== '') {
+      this.searchQuery = search + params;
+    }
+    this.displayQuery = this.searchQuery;
+    this.gitSearch();
+  };
+
+  sendQueryTemplate = () => {
     this.searchResults = null;
 
     const search: string = this.model.q;
@@ -73,11 +110,10 @@ export class GitSearchComponent implements OnInit {
     this.displayQuery = this.searchQuery;
 
     this.gitSearch();
-    //this.router.navigate(['/search' + this.searchQuery]);
   };
 
   searchUsers() {
-    const query = this.searchForm.get('usersQuery').value;
+    const query = this.form.get('usersQuery').value;
     if (!query || query.length < 2) {
       return;
     }
@@ -87,7 +123,7 @@ export class GitSearchComponent implements OnInit {
   }
 
   searchRepositories() {
-    const query = this.searchForm.get('repositoriesQuery').value;
+    const query = this.form.get('repositoriesQuery').value;
     if (!query || query.length < 2) {
       return;
     }

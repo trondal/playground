@@ -8,6 +8,14 @@
   width: 20rem;
 }
 
+.ng-valid {
+  border: 2px solid #42a948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border: 2px solid #a94442; /* red */
+}
+
 // remove all under this, from CSS, not angular meterial
 .total {
   font-size: 24px;

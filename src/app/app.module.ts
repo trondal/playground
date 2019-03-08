@@ -18,9 +18,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { SudokuComponent } from './sudoku/sudoku.component';
 import { GitSearchComponent } from './git-search/git-search.component';
+import { NoSpecialCharsDirective } from './no-special-chars.directive';
 
 @NgModule({
-  declarations: [AppComponent, RxjsComponent, HomeComponent, NotFoundComponent, GitSearchComponent, SudokuComponent],
+  declarations: [AppComponent, RxjsComponent, HomeComponent, NotFoundComponent, GitSearchComponent, SudokuComponent, NoSpecialCharsDirective],
   imports: [
     BrowserModule,
     HttpClientModule,
