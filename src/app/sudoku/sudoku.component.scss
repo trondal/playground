@@ -1,74 +1,59 @@
 .container {
-  width: 270px;
-  height: 270px;
-  border: 1px solid black;
-  position: relative;
+  //display: flex;
+}
+
+.numbers {
+  margin-left: 1rem;
+  width: 378px;
+  height: 378px;
+}
+
+.game {
+  /* margin-left: 44.444px; */
+  width: 376px;
+  height: 376px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .cell {
-  border: 1px solid red;
-  position: absolute;
-
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: cornflowerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.number {
-  transform: translate(33%, 33%);
+.cell-content {
 }
 
-.left0 {
-  margin-left: 0px;
-}
-.left1 {
-  margin-left: 30px;
-}
-.left2 {
-  margin-left: 60px;
-}
-.left3 {
-  margin-left: 90px;
-}
-.left4 {
-  margin-left: 120px;
-}
-.left5 {
-  margin-left: 150px;
-}
-.left6 {
-  margin-left: 180px;
-}
-.left7 {
-  margin-left: 210px;
-}
-.left8 {
-  margin-left: 240px;
+/* 
+.cdk-drop-list	Corresponds to the cdkDropList container.
+.cdk-drag	Corresponds to a cdkDrag instance.
+.cdk-drag-preview	This is the element that will be rendered next to the user's cursor as they're dragging an item in a sortable list. By default the element looks exactly like the element that is being dragged.
+.cdk-drag-placeholder	This is element that will be shown instead of the real element as it's being dragged inside a cdkDropList. By default this will look exactly like the element that is being sorted.
+.cdk-drop-list-dragging	A class that is added to cdkDropList while the user is dragging an item.
+.cdk-drop-list-receiving
+ */
+
+.cdk-drop-list {
+  //background-color: red;
 }
 
-.top0 {
-  margin-top: 0px;
+.cdk-drag {
 }
-.top1 {
-  margin-top: 30px;
+
+.cdk-drag-preview {
 }
-.top2 {
-  margin-top: 60px;
+
+.cdk-drag-placeholder {
 }
-.top3 {
-  margin-top: 90px;
+
+.cdk-drop-list-dragging {
+  background-color: red;
 }
-.top4 {
-  margin-top: 120px;
-}
-.top5 {
-  margin-top: 150px;
-}
-.top6 {
-  margin-top: 180px;
-}
-.top7 {
-  margin-top: 210px;
-}
-.top8 {
-  margin-top: 240px;
+.cdk-drop-list-receiving {
+  background-color: yellow;
 }

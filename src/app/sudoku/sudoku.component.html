@@ -1,9 +1,77 @@
 <div class="container">
-  <div *ngFor="let cell of cells; index as i" class="cell {{ cell.getClassX() }} {{ cell.getClassY() }}">
-    <div class="number">
-      <span *ngIf="cell.getNumber() !== 0">
-        {{ cell.getNumber() }}
-      </span>
+  <!--  <div
+    class="numbers"
+    role="list"
+    cdkDropList
+    #numbersList="cdkDropList"
+    [cdkDropListData]="numbers"
+    [cdkDropListConnectedTo]="[gameList]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="cell" *ngFor="let number of numbers" cdkDrag>
+      <span>{{ number.getSolution() }}</span>
+    </div>
+  </div> -->
+
+  <div
+    class="game"
+    role="list"
+    cdkDropList
+    #gameList="cdkDropList"
+    [cdkDropListData]="cells"
+    [cdkDropListConnectedTo]="[numbersList]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="cell" *ngFor="let cell of cells; index as i" cdkDrag>
+      <div class="cell-content" *ngIf="cell.isDisplay() === true">{{ cell.getSolution() }}</div>
     </div>
   </div>
 </div>
+
+<!-- <div class="container">
+  <mat-grid-list
+    cols="9"
+    rowHeight="fit"
+    class="numbers"
+    role="list"
+    cdkDropList
+    #numbersList="cdkDropList"
+    [cdkDropListData]="numbers"
+    [cdkDropListConnectedTo]="[gameList]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <mat-grid-tile
+      role="listitem"
+      *ngFor="let number of numbers"
+      [colspan]="1"
+      [rowspan]="1"
+      [style.background]="'lightgreen'"
+      cdkDrag
+    >
+      <span>{{ number.getSolution() }}</span>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list
+    cols="9"
+    rowHeight="fit"
+    class="game"
+    role="list"
+    cdkDropList
+    #gameList="cdkDropList"
+    [cdkDropListData]="cells"
+    [cdkDropListConnectedTo]="[numbersList]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <mat-grid-tile
+      role="listitem"
+      *ngFor="let cell of cells; index as i"
+      [colspan]="1"
+      [rowspan]="1"
+      [style.background]="'lightblue'"
+      cdkDrag
+    >
+      <span *ngIf="cell.isDisplay() === true">{{ cell.getSolution() }}</span>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->

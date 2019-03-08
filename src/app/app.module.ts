@@ -5,6 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GitSearchService } from 'src/app/services/git-search.service';
@@ -31,6 +33,8 @@ import { SudokuComponent } from './sudoku/sudoku.component';
     MatCardModule,
     MatInputModule,
     MatListModule,
+    MatGridListModule,
+    DragDropModule,
   ],
   providers: [GitSearchService],
   bootstrap: [AppComponent],

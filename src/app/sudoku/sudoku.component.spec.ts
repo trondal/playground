@@ -8,9 +8,8 @@ describe('SudokuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SudokuComponent ]
-    })
-    .compileComponents();
+      declarations: [SudokuComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
