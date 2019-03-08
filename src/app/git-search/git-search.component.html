@@ -1,4 +1,4 @@
-<form [formGroup]="searchForm" class="container">
+<!-- <form [formGroup]="searchForm" class="container">
   <mat-card>
     <mat-form-field>
       <input matInput formControlName="usersQuery" (change)="searchUsers()" placeholder="Search users in github" />
@@ -20,10 +20,11 @@
       <mat-list-item *ngFor="let r of searchRepositoriesResult.items">{{ r.name }}</mat-list-item>
     </mat-list>
   </mat-card>
-</form>
+</form> -->
 
 <mat-card>
   <mat-card-header>Template driven form</mat-card-header>
+
   <form (ngSubmit)="sendQuery()">
     <h3>{{ title }} - {{ displayQuery }}</h3>
     <div *ngFor="let key of modelKeys">

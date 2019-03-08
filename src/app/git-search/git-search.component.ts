@@ -7,11 +7,11 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { AdvancedSearchModel } from '../advanced-search-model';
 
 @Component({
-  selector: 'app-github',
-  templateUrl: './github.component.html',
-  styleUrls: ['./github.component.scss'],
+  selector: 'app-git-search',
+  templateUrl: './git-search.component.html',
+  styleUrls: ['./git-search.component.scss'],
 })
-export class GithubComponent implements OnInit {
+export class GitSearchComponent implements OnInit {
   searchForm: FormGroup = new FormGroup({
     usersQuery: new FormControl(''),
     repositoriesQuery: new FormControl(''),

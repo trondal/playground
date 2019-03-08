@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SudokuComponent } from './sudoku.component';
+import { CdkDropList } from '@angular/cdk/drag-drop';
 
 describe('SudokuComponent', () => {
   let component: SudokuComponent;
@@ -8,7 +9,7 @@ describe('SudokuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SudokuComponent],
+      declarations: [SudokuComponent, CdkDropList],
     }).compileComponents();
   }));
 

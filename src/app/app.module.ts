@@ -13,14 +13,14 @@ import { GitSearchService } from 'src/app/services/git-search.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GithubComponent } from './github/github.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { SudokuComponent } from './sudoku/sudoku.component';
+import { GitSearchComponent } from './git-search/git-search.component';
 
 @NgModule({
-  declarations: [AppComponent, RxjsComponent, HomeComponent, NotFoundComponent, GithubComponent, SudokuComponent],
+  declarations: [AppComponent, RxjsComponent, HomeComponent, NotFoundComponent, GitSearchComponent, SudokuComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
