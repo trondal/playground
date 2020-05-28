@@ -9,12 +9,9 @@ describe('RxjsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RxjsComponent ],
-      imports: [
-        MatCardModule
-      ]
-    })
-    .compileComponents();
+      declarations: [RxjsComponent],
+      imports: [MatCardModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

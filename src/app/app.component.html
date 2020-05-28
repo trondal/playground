@@ -1,7 +1,13 @@
 <header>
-<mat-toolbar>
-  <span>Playground</span>
-</mat-toolbar>
+  <mat-toolbar>
+    <span>Playground</span>
+  </mat-toolbar>
 </header>
+
+<mat-nav-list dense>
+  <a mat-list-item routerLink="/git-search" routerLinkActive="active">GitSearch</a>
+  <a mat-list-item routerLink="/rxjs" routerLinkActive="active">Rxjs</a>
+  <a mat-list-item routerLink="/sudoko" routerLinkActive="active">Suduko</a>
+</mat-nav-list>
 
 <router-outlet></router-outlet>
